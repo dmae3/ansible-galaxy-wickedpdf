@@ -1,0 +1,14 @@
+---
+wickedpdf_dependencies:
+  - name: libXrender-devel
+    version: '*'
+  - name: ipa-gothic-fonts
+    version: '*'
+  - name: ipa-mincho-fonts
+    version: '*'
+  - name: fontconfig-devel
+    version: '*'
+  - name: libXext
+    version: '*'
+wickedpdf_wkhtmltopdf_download_url: "https://downloads.wkhtmltopdf.org/0.12/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz"
+wickedpdf_wkhtmltopdf_version: 0.12.4

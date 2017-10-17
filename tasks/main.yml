@@ -1,0 +1,19 @@
+---
+- name: install dependencies
+  yum: name={{ item.name }}-{{ item.version }} state=present
+  with_items: "{{ wickedpdf_dependencies }}"
+
+- name: download wkhtmltopdf
+  get_url: url={{ wickedpdf_wkhtmltopdf_download_url }} dest=/tmp/wkhtmltopdf-{{ wickedpdf_wkhtmltopdf_version }}.tar.xz
+
+- name: extract wkhtmltopdf
+  unarchive:
+    src: /tmp/wkhtmltopdf-{{ wickedpdf_wkhtmltopdf_version }}.tar.xz
+    dest: /tmp/
+    copy: no
+
+- name: deploy wkhtmltopdf
+  copy: src=/tmp/wkhtmltox/bin/{{ item }} dest=/usr/local/bin/{{ item }} owner=root group=root mode=0755
+  with_items:
+    - wkhtmltoimage
+    - wkhtmltopdf
