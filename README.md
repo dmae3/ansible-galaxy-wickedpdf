@@ -30,7 +30,7 @@ Example Playbook
 - hosts: all
   become: true
   roles:
-    - { role: wickedpdf }
+    - { role: galaxy-wickedpdf }
 ```
 
 License
